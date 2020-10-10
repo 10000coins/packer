@@ -77,7 +77,7 @@ func (r *rawTemplate) decodeProvisioner(raw interface{}) (Provisioner, error) {
 	delete(p.Config, "override")
 	delete(p.Config, "pause_before")
 	delete(p.Config, "max_retries")
-	delete(p.Config, "type")
+	// delete(p.Config, "type")
 	delete(p.Config, "timeout")
 
 	if len(p.Config) == 0 {
@@ -223,7 +223,7 @@ func (r *rawTemplate) Template() (*Template, error) {
 			delete(pp.Config, "except")
 			delete(pp.Config, "only")
 			delete(pp.Config, "keep_input_artifact")
-			delete(pp.Config, "type")
+			// delete(pp.Config, "type")
 			delete(pp.Config, "name")
 
 			if len(pp.Config) == 0 {

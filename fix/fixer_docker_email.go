@@ -4,8 +4,11 @@ import "github.com/mitchellh/mapstructure"
 
 type FixerDockerEmail struct{}
 
-func (FixerDockerEmail) DeprecatedOptions() []string {
-	return []string{"login_email"}
+func (FixerDockerEmail) DeprecatedOptions() map[string][]string {
+	return map[string][]string{
+		"docker": []string{"login_email"},
+	}
+
 }
 
 func (FixerDockerEmail) Fix(input map[string]interface{}) (map[string]interface{}, error) {
